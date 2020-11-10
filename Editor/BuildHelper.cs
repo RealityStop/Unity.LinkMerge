@@ -28,7 +28,8 @@ public class PackagesLinkXmlExtractor : IPreprocessBuildWithReport, IPostprocess
 
     public void OnPreprocessBuild(BuildReport report)
     {
-        CreateMergedLinkFromPackages();
+		if (!File.Exists(LinkFilePath))
+			CreateMergedLinkFromPackages();
     }
 
     public void OnPostprocessBuild(BuildReport report)
