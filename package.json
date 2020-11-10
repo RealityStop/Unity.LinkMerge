@@ -1,5 +1,5 @@
 {
-	"name": "Unity.CustomPackage.LinkMerge",
+	"name": "unity.custompackage.linkmerge",
 	"version": "1.0.0",
 	"displayName": "Custom Package Link Merger",
 	"description": "A Utility to pull in flagged link.xml files from custom packages.",
@@ -7,8 +7,8 @@
 	"dependencies": {},
 	"keywords": [
 		"Packages",
-		"Link"
-		"Merge"
+		"Link",
+		"Merge",
 		"LinkMerge"
 	],
 	"author": {
