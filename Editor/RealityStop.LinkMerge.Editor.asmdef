@@ -1,5 +1,5 @@
 {
-    "name": "Unity.CustomPackage.LinkMerge",
+    "name": "RealityStop.LinkMerge.Editor",
     "references": [],
     "includePlatforms": [
         "Editor"

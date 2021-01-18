@@ -1,10 +1,9 @@
 {
-	"name": "unity.custompackage.linkmerge",
+	"name": "com.realitystop.linkmerge",
 	"version": "1.0.0",
 	"displayName": "Custom Package Link Merger",
 	"description": "A Utility to pull in flagged link.xml files from custom packages.",
 	"unity": "2018.4",
-	"dependencies": {},
 	"keywords": [
 		"Packages",
 		"Link",
@@ -12,6 +11,7 @@
 		"LinkMerge"
 	],
 	"author": {
-		"name": "Reality.Stop()"
+		"name": "Reality.Stop()",
+		"url": "https://github.com/RealityStop"
 	}
 }
