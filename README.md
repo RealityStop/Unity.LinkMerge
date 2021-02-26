@@ -1,11 +1,16 @@
-﻿Custom Package Link Merger
+# Custom Package Link Merger
 ==========================
 
-If you use Reflexion, Unity could wrongly assume that your assembly is unused and 
-[strip your code](https://docs.unity3d.com/Manual/ManagedCodeStripping.html) when
-compiling with IL2CPP backend. 
+## Overview
+Unity employs aggressive stripping when compiling for mobile devices and the web 
+[strip your code](https://docs.unity3d.com/Manual/ManagedCodeStripping.html), which can cause assemblies that are only referenced via reflection to be stripped from the build output.
 
-`link.xml` files are ignored when placed in UPM packages 
+Additionally, `link.xml` files are ignored when placed in UPM package assemblies, preventing the easiest solution.
+
+This repo contains a build script that can be added to your packages that will inject a custom `linkmerge.xml` file from your package into the project temporarily during the build process.  In this way, package-based assemblies can signal to Unity that they should not be stripped.
+
+The script is multi-instance safe, with all `linkmerge.xml` files being merged together into a single link.xml, regardless of how many packages reference the build script.
+
 
 ## Usage
 
@@ -19,8 +24,12 @@ Fill the document with your assemblies
 </linker>
 ```
 
-If your package is installed via [openupm](https://openupm.com) registry, you 
-can add this package as dependency 
+And add the BuildHelper.cs file to your Editor asmdef.  **You're good to go!**
+
+
+
+Alternatively, if your package is installed via the [openupm](https://openupm.com) registry, you 
+can add this package as dependency with the following:
 
 ```json
 // package.json
